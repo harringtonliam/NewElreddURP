@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6709dabde6ae73e4982fd03988c2ab62, type: 3}
+  m_Name: Training Mission 1
+  m_EditorClassIdentifier: 
+  questTitle: Combat Training Part 1
+  questDescription: Your orders are to proceed through the ajoining rooms, dispatch
+    any training dummies you encounter, and report to 2nd Lieutenant Enoch , who
+    will be waiting for you when you reach the other side.
+  experiancePointReward: 180
+  objectives:
+  - Get to the other side of the  first training level

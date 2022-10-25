@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e817f090d58e94bafaf4def5e64115, type: 3}
+  m_Name: Lantern
+  m_EditorClassIdentifier: 
+  itemID: bcd73312-19d8-49f4-b7f6-db9af8b3d805
+  displayName: Lantern
+  description: Usefull when there is no  light
+  icon: {fileID: 21300000, guid: 018cc941bffce024cac0f70415048833, type: 3}
+  pickup: {fileID: 7557242182702509475, guid: a3d83d208764924448145904feb8b2b9, type: 3}
+  isStackable: 0
+  maxNumberInStack: 1
+  allowedEquipLocation: 4
+  itemOverrideController: {fileID: 22100000, guid: 42b9ba00542bdb245926c0643ba59ce3,
+    type: 2}
+  equipedPrefab: {fileID: 5579698026622427511, guid: d387757abb7fc8440a7cb2738f08f70f,
+    type: 3}
+  isRightHanded: 0

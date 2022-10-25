@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548df23ac3d20fe4ab3bb913d169e2c0, type: 3}
+  m_Name: WeatherDescriptions
+  m_EditorClassIdentifier: 
+  weatherEffects:
+  - weather: 0
+    lightIntensityPercentage: 110
+    lightShadowStrenght: 1
+  - weather: 1
+    lightIntensityPercentage: 100
+    lightShadowStrenght: 1
+  - weather: 2
+    lightIntensityPercentage: 95
+    lightShadowStrenght: 0.5
+  - weather: 3
+    lightIntensityPercentage: 85
+    lightShadowStrenght: 0
+  - weather: 4
+    lightIntensityPercentage: 80
+    lightShadowStrenght: 0.25
+  - weather: 5
+    lightIntensityPercentage: 70
+    lightShadowStrenght: 0
+  - weather: 6
+    lightIntensityPercentage: 60
+    lightShadowStrenght: 0

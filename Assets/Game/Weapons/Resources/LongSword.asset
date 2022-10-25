@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be251821316fed84a97e38991fa8f1a2, type: 3}
+  m_Name: LongSword
+  m_EditorClassIdentifier: 
+  itemID: 40a44cd5-a662-46f6-b3da-6f148bb70f52
+  displayName: Long Sword
+  description: DND Long Sword
+  icon: {fileID: 21300000, guid: 53f56d0a0173d2042860c223af21db30, type: 3}
+  pickup: {fileID: 7557242182702509475, guid: f186a292d0cdc2c48b98e880bff5a73e, type: 3}
+  isStackable: 0
+  maxNumberInStack: 1
+  allowedEquipLocation: 3
+  weaponOverrideController: {fileID: 22100000, guid: 11b88c44df84935479f756f218c0d677, type: 2}
+  equipedPrefab: {fileID: 2184448118492454962, guid: 12837628759fd714b8beaaa5160d1917, type: 3}
+  ammunitionType: 0
+  weaponDamageDice: 8
+  weaponDamageDiceNumber: 1
+  weaponDamageAdditiveBonus: 0
+  weaponToHitBonus: 0
+  percentageBonus: 0
+  weaponRange: 2
+  isRightHanded: 1
+  isRangedWeapon: 0
+  projectile: {fileID: 0}
+  modifierAbility: 0

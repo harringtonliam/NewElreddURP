@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e817f090d58e94bafaf4def5e64115, type: 3}
+  m_Name: DefaultHoldableItem
+  m_EditorClassIdentifier: 
+  itemID: 551c1992-b27d-44d9-bf2a-0c1d5d69a309
+  displayName: DefaultHoldableItem
+  description: 
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
+  isStackable: 0
+  maxNumberInStack: 20
+  allowedEquipLocation: 4
+  itemOverrideController: {fileID: 0}
+  equipedPrefab: {fileID: 0}
+  isRightHanded: 0

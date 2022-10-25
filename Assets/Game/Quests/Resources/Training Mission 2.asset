@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6709dabde6ae73e4982fd03988c2ab62, type: 3}
+  m_Name: Training Mission 2
+  m_EditorClassIdentifier: 
+  questTitle: Combat Training Part 2
+  questDescription: The mission will test your ability with your sidearm, the VM70
+    Service Pistol.  As before, your orders are to make you way through the adjoining
+    rooms , dispatching any training dummies that try to stop you.  Report to Lt
+    Enoch when you reach the other side.  You've been told this mission will test
+    your brains as well as your combats skills.  So perhaps there is something different
+    awaiting you.
+  experiancePointReward: 180
+  objectives:
+  - Report to Lt Enoch

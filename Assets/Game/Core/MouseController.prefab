@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1088003979485646743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1088003979485646740}
+  - component: {fileID: 1088003979485646741}
+  m_Layer: 0
+  m_Name: MouseController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1088003979485646740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088003979485646743}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1088003979485646741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088003979485646743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523b51a7fd5fb6a4da0d79fad2ed055a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorMappings:
+  - cursorType: 0
+    texture2D: {fileID: 2800000, guid: f08a13262066502499a7c93851c6d463, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 1
+    texture2D: {fileID: 2800000, guid: aef804cedb989074da5bfe1aa933d4d6, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 2
+    texture2D: {fileID: 2800000, guid: 8a31b5c268031a84a872f286e2382061, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 3
+    texture2D: {fileID: 2800000, guid: cc8e2339ec0761d4ba1aa3a3460c250f, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 4
+    texture2D: {fileID: 2800000, guid: f42c4bb11f584df40951cf4832f8cc82, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 5
+    texture2D: {fileID: 2800000, guid: 96d4bfdb0d6d8c042bf8fccf6524d239, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 6
+    texture2D: {fileID: 2800000, guid: 27db846ca8711834d87aaeff71804870, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 7
+    texture2D: {fileID: 2800000, guid: 9bbd21634a7928446a0003aeaa1a7d1e, type: 3}
+    hotspot: {x: 0, y: 0}
+  - cursorType: 8
+    texture2D: {fileID: 2800000, guid: 1bb1ac698c7ca694c8150857294e757a, type: 3}
+    hotspot: {x: 0, y: 0}
+  raycastRadius: 0.25

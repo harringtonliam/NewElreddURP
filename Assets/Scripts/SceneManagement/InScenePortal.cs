@@ -72,7 +72,7 @@ namespace RPG.SceneManagement
 
         private void DisablePlayerControl()
         {
-            GameObject player = GameObject.FindWithTag("Player");
+            GameObject player = PlayerController.GetFirstSelectedPlayer();
             player.GetComponent<ActionScheduler>().CancelCurrentAction();
             player.GetComponent<PlayerController>().enabled = false;
         }
@@ -81,7 +81,7 @@ namespace RPG.SceneManagement
         {
             try
             {
-                GameObject player = GameObject.FindWithTag("Player");
+                GameObject player = PlayerController.GetFirstSelectedPlayer(); 
                 player.GetComponent<PlayerController>().enabled = true;
             }
             catch (Exception ex)

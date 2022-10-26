@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using RPG.Control;
 
 
 namespace RPG.Stats
@@ -14,7 +15,7 @@ namespace RPG.Stats
 
         void Awake()
         {
-            baseStats = GameObject.FindWithTag("Player").GetComponent<BaseStats>();
+            baseStats = PlayerController.GetFirstSelectedPlayer().GetComponent<BaseStats>();
         }
 
         private void Update()

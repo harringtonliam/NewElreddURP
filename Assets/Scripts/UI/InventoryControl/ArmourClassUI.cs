@@ -4,6 +4,7 @@ using UnityEngine;
 using RPG.InventoryControl;
 using RPG.Combat;
 using TMPro;
+using RPG.Control;
 
 namespace RPG.UI.InventoryControl
 {
@@ -17,7 +18,7 @@ namespace RPG.UI.InventoryControl
 
         private void Awake()
         {
-            var player = GameObject.FindGameObjectWithTag("Player");
+            var player = PlayerController.GetFirstSelectedPlayer(); ;
             playerAmourClass = player.GetComponent<ArmourClass>();
             playerEquipment = player.GetComponent<Equipment>();
             playerEquipment.equipmentUpdated += RedrawUI;

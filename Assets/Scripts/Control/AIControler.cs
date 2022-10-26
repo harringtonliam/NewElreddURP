@@ -43,7 +43,7 @@ namespace RPG.Control
 
         private void Awake()
         {
-            player = GameObject.FindWithTag("Player");
+            player = PlayerController.GetFirstSelectedPlayer(); 
             mover = GetComponent<Mover>();
             if (aIRelationship == AIRelationship.Hostile)
             {

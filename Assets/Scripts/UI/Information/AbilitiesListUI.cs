@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Stats;
+using RPG.Control;
 
 namespace RPG.UI.Information
 {
@@ -17,7 +18,7 @@ namespace RPG.UI.Information
         void Start()
         {
 
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = PlayerController.GetFirstSelectedPlayer(); 
             characterAbilities = player.GetComponent<CharacterAbilities>(); 
 
             RedrawUI();

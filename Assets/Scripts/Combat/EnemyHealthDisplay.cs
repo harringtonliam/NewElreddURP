@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Attributes;
 using UnityEngine.UI;
+using RPG.Control;
 
 namespace RPG.Combat
 {
@@ -12,7 +13,7 @@ namespace RPG.Combat
 
         void Awake()
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject player = PlayerController.GetFirstSelectedPlayer(); ;
             fighter = player.GetComponent<Fighting>();
         }
 

@@ -27,7 +27,7 @@ namespace RPG.Control
         // Start is called before the first frame update
         void Start()
         {
-            selectedPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            selectedPlayer = PlayerController.GetFirstSelectedPlayer().GetComponent<PlayerController>();
         }
 
         // Update is called once per frame

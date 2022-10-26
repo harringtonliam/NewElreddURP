@@ -30,6 +30,7 @@ namespace RPG.WeatherControl
             {
                 weatherContoller.weatherHasChanged += SetVFX;
             }
+            SetVFX();
         }
 
         private void Update()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Saving;
 using System;
+using RPG.Control;
 
 namespace RPG.InventoryControl
 {
@@ -41,7 +42,7 @@ namespace RPG.InventoryControl
 
         public static Inventory GetPlayerInventory()
         {
-            var player = GameObject.FindWithTag("Player");
+            var player = PlayerController.GetFirstSelectedPlayer(); 
             return player.GetComponent<Inventory>();
         }
 

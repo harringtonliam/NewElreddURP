@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using RPG.Control;
 
 namespace RPG.Attributes
 {
@@ -12,7 +13,7 @@ namespace RPG.Attributes
 
         void Awake()
         {
-            health = GameObject.FindWithTag("Player").GetComponent<Health>();
+            health = PlayerController.GetFirstSelectedPlayer().GetComponent<Health>();
         }
 
         private void Update()

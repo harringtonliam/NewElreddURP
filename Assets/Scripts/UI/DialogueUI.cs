@@ -4,6 +4,7 @@ using UnityEngine;
 using RPG.DialogueControl;
 using TMPro;
 using UnityEngine.UI;
+using RPG.Control;
 
 namespace RPG.UI
 {
@@ -27,7 +28,7 @@ namespace RPG.UI
         // Start is called before the first frame update
         void Start()
         {
-            playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
+            playerConversant = PlayerController.GetFirstSelectedPlayer().GetComponent<PlayerConversant>();
             playerConversant.onConversationUpdated += UpdateUI;
             nextButton.onClick.AddListener(Next);
             quitButton.onClick.AddListener(() => playerConversant.Quit());

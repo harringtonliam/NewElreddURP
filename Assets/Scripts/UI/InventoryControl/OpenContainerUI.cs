@@ -5,6 +5,7 @@ using RPG.InventoryControl;
 using UnityEngine.UI;
 using TMPro;
 using RPG.Attributes;
+using RPG.Control;
 
 namespace RPG.UI.InventoryControl
 {
@@ -56,7 +57,7 @@ namespace RPG.UI.InventoryControl
                 containerName.text = defaultContainerName;
                 containerImage.sprite = defaultContainerImage;
             }
-            CharacterSheet characterSheet = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterSheet>();
+            CharacterSheet characterSheet = PlayerController.GetFirstSelectedPlayer().GetComponent<CharacterSheet>();
             playerName.text = characterSheet.CharacterName;
             playerImage.sprite = characterSheet.Portrait;
 

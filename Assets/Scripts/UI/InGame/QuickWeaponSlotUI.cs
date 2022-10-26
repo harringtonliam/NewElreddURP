@@ -4,6 +4,7 @@ using UnityEngine;
 using RPG.Combat;
 using UnityEngine.UI;
 using RPG.UI.InventoryControl;
+using RPG.Control;
 
 namespace RPG.UI.InGame
 {
@@ -20,7 +21,7 @@ namespace RPG.UI.InGame
 
         private void Awake()
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = PlayerController.GetFirstSelectedPlayer(); 
             weaponStore = player.GetComponent<WeaponStore>();
             weaponStore.storeUpdated += UpdateIcon;
         }

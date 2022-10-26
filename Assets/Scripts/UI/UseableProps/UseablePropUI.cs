@@ -5,6 +5,7 @@ using RPG.UseablePropControl;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using RPG.Control;
 
 namespace RPG.UI.UseableProps
 {
@@ -31,7 +32,7 @@ namespace RPG.UI.UseableProps
             activateButton.onClick.AddListener(ActivateButtonClick);
             deactivateButton.onClick.AddListener(DectivateButtonClick);
 
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = PlayerController.GetFirstSelectedPlayer(); 
             
         }
 

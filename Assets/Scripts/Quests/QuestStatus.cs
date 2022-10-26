@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Control;
 
 namespace RPG.Quests
 {
@@ -65,7 +66,7 @@ namespace RPG.Quests
 
         private void AwardExperience()
         {
-            GameObject player = GameObject.FindWithTag("Player");
+            GameObject player = PlayerController.GetFirstSelectedPlayer(); 
             Experience experience = player.GetComponent<Experience>();
             if (player.GetComponent<Experience>() != null)
             {

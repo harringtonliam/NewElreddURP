@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using RPG.Control;
 
 namespace RPG.Stats
 { 
@@ -12,7 +13,7 @@ public class ExperienceDisplay : MonoBehaviour
 
         void Awake()
         {
-            experience = GameObject.FindWithTag("Player").GetComponent<Experience>();
+            experience = PlayerController.GetFirstSelectedPlayer().GetComponent<Experience>();
         }
 
         private void Update()

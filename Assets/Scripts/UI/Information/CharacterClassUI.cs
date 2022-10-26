@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using RPG.Stats;
+using RPG.Control;
 
 namespace RPG.UI.Information
 {
@@ -20,7 +21,7 @@ namespace RPG.UI.Information
 
         void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = PlayerController.GetFirstSelectedPlayer(); 
             baseStats = player.GetComponent<BaseStats>();
             experience = player.GetComponent<Experience>();
 

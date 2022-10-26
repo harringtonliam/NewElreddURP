@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Attributes;
 using RPG.Core;
+using RPG.Control;
 
 namespace RPG.InventoryControl
 {
@@ -64,7 +65,7 @@ namespace RPG.InventoryControl
         {
             if (useFX == null) return;
 
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject player = PlayerController.GetFirstSelectedPlayer(); ;
             GameObject fx = GameObject.Instantiate(useFX, player.transform);
             Destroy(fx, 1f);
 

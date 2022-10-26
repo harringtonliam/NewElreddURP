@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.InventoryControl;
 using RPG.UI.InventoryControl;
+using RPG.Control;
 
 namespace RPG.UI.InGame
 {
@@ -19,7 +20,7 @@ namespace RPG.UI.InGame
 
         private void Awake()
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = PlayerController.GetFirstSelectedPlayer(); 
             quickItemStore = player.GetComponent<QuickItemStore>();
             quickItemStore.storeUpdated += UpdateIcon;
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.InventoryControl;
 using RPG.UI.Dragging;
+using RPG.Control;
 
 
 namespace RPG.UI.InventoryControl
@@ -18,7 +19,7 @@ namespace RPG.UI.InventoryControl
         void Start()
         {
             scenePickups = FindObjectOfType<ScenePickups>();
-            player = GameObject.FindWithTag("Player");
+            player = PlayerController.GetFirstSelectedPlayer();
         }
 
 

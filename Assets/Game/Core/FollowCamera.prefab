@@ -9806,7 +9806,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0220082, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9835,6 +9835,8 @@ MonoBehaviour:
   - weather: 6
     vfx: {fileID: 2443470573644090868}
   weatherContoller: {fileID: 0}
+  WeatherEffectsOn: 0
+  interiorLoactionHeight: -50
 --- !u!1 &8124222834904663995
 GameObject:
   m_ObjectHideFlags: 0

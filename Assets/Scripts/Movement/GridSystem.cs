@@ -9,6 +9,7 @@ namespace RPG.Movement
         private int width;
         private int length;
         private float cellSize;
+        private GridObject[,] gridObjects;
 
         public GridSystem(int width, int length, float cellSize)
         {
@@ -16,25 +17,60 @@ namespace RPG.Movement
             this.length = length;
             this.cellSize = cellSize;
 
+            gridObjects = new GridObject[width, length];
+
             for (int x = 0; x < width; x++)
             {
                 for (int z = 0; z < length; z++)
                 {
-                    Debug.DrawLine(GetWorldPosition(x,z), GetWorldPosition(x,z) + Vector3.right * 2f, Color.white, 1000);
+                    GridPosition gridPosition = new GridPosition(x, z);
+                    gridObjects[x,z] = new GridObject(this, gridPosition);
                 }
             }
         }
 
 
-        public  Vector3 GetWorldPosition(int x, int z)
+        public  Vector3 GetWorldPosition(GridPosition gridPostion)
         {
-            return new Vector3(x, 0, z) * cellSize;
+            return new Vector3(gridPostion.x, 0, gridPostion.z) * cellSize;
         }
 
-        public GridPostion GetGridPosition(Vector3 position)
+        public GridPosition GetGridPosition(Vector3 position)
         {
-            return new GridPostion(Mathf.RoundToInt(position.x / cellSize), Mathf.RoundToInt(position.z / cellSize));
+            return new GridPosition(Mathf.RoundToInt(position.x / cellSize), Mathf.RoundToInt(position.z / cellSize));
         }
+
+        public void CreateDebugObjects(Transform debugPrefab)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                for (int z = 0; z < length; z++)
+                {
+                    GridPosition gridPostion = new GridPosition(x, z);
+
+                    Transform gridDebugObject =  GameObject.Instantiate(debugPrefab, GetWorldPosition(gridPostion), Quaternion.identity);
+                    gridDebugObject.GetComponent<GridDebugObject>().SetGridDebugObject(GetGridObject(gridPostion));
+                }
+            }
+        }
+
+        public GridObject GetGridObject(GridPosition gridPostion)
+        {
+            return gridObjects[gridPostion.x, gridPostion.z];
+        }
+
+        public bool IsValidGridPosition(GridPosition gridPosition)
+        {
+            if (gridPosition.x >= 0 && gridPosition.z >= 0  && gridPosition.z < width && gridPosition.z < length)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 
 }

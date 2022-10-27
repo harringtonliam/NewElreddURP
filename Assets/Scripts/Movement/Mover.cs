@@ -13,21 +13,31 @@ namespace RPG.Movement
     {
         [SerializeField] float maxSpeed = 6f;
         [SerializeField] float maxPathLength = 40f;
+        [SerializeField] int maxCombatMovmentSquares = 6;
         [SerializeField] AudioSource footStepSound;
 
         NavMeshAgent navMeshAgent;
         Health health;
+        private GridPosition gridPosition;
 
         // Start is called before the first frame update
         void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<Health>();
+            gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+            LevelGrid.Instance.AddUnitAtGridPosition(LevelGrid.Instance.GetGridPosition(transform.position), this);
         }
 
         // Update is called once per frame
         void Update()
         {
+            GridPosition newGridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+            if (newGridPosition != gridPosition)
+            {
+                LevelGrid.Instance.UnitMovedGridPoistion(this, gridPosition, newGridPosition);
+                gridPosition = newGridPosition;
+            }
 
             navMeshAgent.enabled = !health.IsDead;
             UpdateAnimator();
@@ -53,6 +63,7 @@ namespace RPG.Movement
             if (!hasPath) return false;
             if (navMeshPath.status != NavMeshPathStatus.PathComplete) return false;
             if (GetPathLength(navMeshPath) > maxPathLength) return false;
+            if (!IsValidActionGridPosition(destination)) return false;
             return true;
         }
 
@@ -130,6 +141,48 @@ namespace RPG.Movement
             }
 
             return totalPathLength;
+        }
+
+        public bool IsValidActionGridPosition(GridPosition checkGridPosition)
+        {
+            List<GridPosition> validGridPositions = GetValidActionGridPostionList();
+            return validGridPositions.Contains(checkGridPosition);
+        }
+
+        public bool IsValidActionGridPosition(Vector3 checkDestination)
+        {
+            GridPosition checkGridPosition = LevelGrid.Instance.GetGridPosition(checkDestination);
+            List<GridPosition> validGridPositions = GetValidActionGridPostionList();
+            return validGridPositions.Contains(checkGridPosition);
+        }
+
+        public List<GridPosition> GetValidActionGridPostionList()
+        {
+            List <GridPosition> validGridPositionList = new List<GridPosition>();
+
+            for (int x = -maxCombatMovmentSquares; x <= maxCombatMovmentSquares; x++)
+            {
+                for (int z = -maxCombatMovmentSquares; z <= maxCombatMovmentSquares; z++)
+                {
+                    GridPosition offsetGridPosition = new GridPosition(x, z);
+                    GridPosition testGridPosition = gridPosition + offsetGridPosition;
+                    if (!LevelGrid.Instance.IsValidGridPosition(testGridPosition))
+                    {
+                        continue;
+                    }
+                    if (gridPosition == testGridPosition)
+                    {
+                        continue;
+                    }
+                    if (LevelGrid.Instance.HasAnyUnitOnThisGridPosition(testGridPosition))
+                    {
+                        continue;
+                    }
+                    validGridPositionList.Add(testGridPosition);
+                }
+            }
+
+            return validGridPositionList;
         }
     }
 }

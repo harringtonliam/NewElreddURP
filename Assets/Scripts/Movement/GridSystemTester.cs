@@ -8,11 +8,19 @@ namespace RPG.Movement
 
     public class GridSystemTester : MonoBehaviour
     {
+        [SerializeField] Transform gridDebugObjectPrefab;
+
+
+        private GridSystem gridSystem;
+        
         // Start is called before the first frame update
         void Start()
         {
-            GridSystem gridSystem = new GridSystem(100, 100, 2f);
+            gridSystem = new GridSystem(100, 100, 2f);
+            gridSystem.CreateDebugObjects(gridDebugObjectPrefab);
         }
+
+
 
 
 

@@ -10,6 +10,7 @@ namespace RPG.Movement
         [SerializeField] int gridXSize = 50;
         [SerializeField] int gridZSize = 50;
 
+
         public static LevelGrid Instance { get; private set; }
 
         private GridSystem gridSystem;
@@ -25,7 +26,7 @@ namespace RPG.Movement
 
             Instance = this;
 
-            gridSystem = new GridSystem(gridXSize, gridZSize, 2f);
+            gridSystem = new GridSystem(gridXSize, gridZSize, 1.5f);
             gridSystem.CreateDebugObjects(gridDebugObjectPrefab);
         }
 

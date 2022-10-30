@@ -43,6 +43,10 @@ namespace RPG.Movement
 
             navMeshAgent.enabled = !health.IsDead;
             UpdateAnimator();
+            if(navMeshAgent.remainingDistance < 0.25f && )
+            {
+                CreateListOfValidGridDestinations();
+            }
 
         }
 
@@ -89,6 +93,8 @@ namespace RPG.Movement
             navMeshAgent.destination = destination;
             navMeshAgent.speed = maxSpeed * Mathf.Clamp01(speedFraction);
             navMeshAgent.isStopped = false;
+
+            
         }
 
         //AnimationEvents

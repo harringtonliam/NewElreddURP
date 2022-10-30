@@ -28,19 +28,37 @@ namespace RPG.Movement
 
         public void HideAllGridPositions()
         {
-            for (int x = 0; x < gridSystemVisualSingles.GetUpperBound(0); x++)
+            try
             {
-                for (int z = 0; z < gridSystemVisualSingles.GetUpperBound(1); z++)
+                for (int x = 0; x < gridSystemVisualSingles.GetUpperBound(0); x++)
                 {
-                    gridSystemVisualSingles[x, z].Hide();
+                    for (int z = 0; z < gridSystemVisualSingles.GetUpperBound(1); z++)
+                    {
+                        gridSystemVisualSingles[x, z].Hide();
+                    }
                 }
             }
+            catch (System.Exception)
+            {
+                Debug.Log("HideAllGridPositions exception");
+            }
+
         }
 
         public void ShowGridPositionList(List<GridPosition> gridPositionList)
         {
-            foreach (var gridPosition in gridPositionList)
-                gridSystemVisualSingles[gridPosition.x, gridPosition.z].Show();
+            try
+            {
+                foreach (var gridPosition in gridPositionList)
+                    gridSystemVisualSingles[gridPosition.x, gridPosition.z].Show();
+
+            }
+            catch (System.Exception)
+            {
+                                Debug.Log("ShowGridPositionList exception");
+            }
+
+
            
         }
 

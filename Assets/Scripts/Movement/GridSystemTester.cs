@@ -16,7 +16,7 @@ namespace RPG.Movement
         // Start is called before the first frame update
         void Start()
         {
-            gridSystem = new GridSystem(100, 100, 2f);
+            gridSystem = new GridSystem(100, 100, 1.5f);
             gridSystem.CreateDebugObjects(gridDebugObjectPrefab);
         }
 

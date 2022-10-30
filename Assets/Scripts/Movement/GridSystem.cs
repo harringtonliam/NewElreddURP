@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace RPG.Movement
 {
@@ -61,7 +63,7 @@ namespace RPG.Movement
 
         public bool IsValidGridPosition(GridPosition gridPosition)
         {
-            if (gridPosition.x >= 0 && gridPosition.z >= 0  && gridPosition.z < width && gridPosition.z < length)
+            if (gridPosition.x >= 0 && gridPosition.z >= 0  && gridPosition.z < width && gridPosition.z < length  && IsOnNavMesh(gridPosition))
             {
                 return true;
             }
@@ -69,6 +71,13 @@ namespace RPG.Movement
             {
                 return false;
             }
+        }
+
+        private bool IsOnNavMesh(GridPosition gridPosition)
+        {
+            NavMeshHit navMeshHit;
+            bool nearNavMesh = NavMesh.SamplePosition(GetWorldPosition(gridPosition), out navMeshHit, 1f, NavMesh.AllAreas);
+            return nearNavMesh; 
         }
 
         public int GetWidth()

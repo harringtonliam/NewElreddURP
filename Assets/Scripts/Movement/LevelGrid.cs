@@ -56,7 +56,14 @@ namespace RPG.Movement
 
         public GridPosition GetGridPosition(Vector3 worldPosition) => gridSystem.GetGridPosition(worldPosition);
 
+        public Vector3 GetGridWorld(GridPosition gridPostion) => gridSystem.GetWorldPosition(gridPostion);
+
+
         public bool IsValidGridPosition(GridPosition gridPosition) => gridSystem.IsValidGridPosition(gridPosition);
+
+        public int GetWith() => gridSystem.GetWidth();
+
+        public int GetLength() => gridSystem.GetLength();
 
         public bool HasAnyUnitOnThisGridPosition( GridPosition gridPosition)
         {

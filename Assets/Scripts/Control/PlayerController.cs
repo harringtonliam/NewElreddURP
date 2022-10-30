@@ -72,10 +72,15 @@ namespace RPG.Control
 
         public void SetSelected(bool selected)
         {
+            Debug.Log("Player controller selected");
             isSelected = selected;
             if (selectedVisual != null)
             {
                 selectedVisual.GetComponent<MeshRenderer>().enabled = selected;
+            }
+            if(selected)
+            {
+                mover.CreateListOfValidGridDestinations();
             }
         }
 

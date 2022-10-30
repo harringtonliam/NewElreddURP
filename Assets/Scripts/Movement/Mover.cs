@@ -19,6 +19,7 @@ namespace RPG.Movement
         NavMeshAgent navMeshAgent;
         Health health;
         private GridPosition gridPosition;
+        private List<GridPosition> validGridPositions;
 
         // Start is called before the first frame update
         void Start()
@@ -27,6 +28,7 @@ namespace RPG.Movement
             health = GetComponent<Health>();
             gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
             LevelGrid.Instance.AddUnitAtGridPosition(LevelGrid.Instance.GetGridPosition(transform.position), this);
+            CreateListOfValidGridDestinations();
         }
 
         // Update is called once per frame
@@ -67,7 +69,13 @@ namespace RPG.Movement
             return true;
         }
 
-
+        public void CreateListOfValidGridDestinations()
+        {
+            validGridPositions = GetValidActionGridPostionList();
+            GridSystemVisual gridSystemVisual = FindObjectOfType<GridSystemVisual>();
+            gridSystemVisual.HideAllGridPositions();
+            gridSystemVisual.ShowGridPositionList(validGridPositions);
+        }
 
         public void StartMovementAction(Vector3 destination, float speedFraction)
         {
@@ -145,14 +153,12 @@ namespace RPG.Movement
 
         public bool IsValidActionGridPosition(GridPosition checkGridPosition)
         {
-            List<GridPosition> validGridPositions = GetValidActionGridPostionList();
             return validGridPositions.Contains(checkGridPosition);
         }
 
         public bool IsValidActionGridPosition(Vector3 checkDestination)
         {
             GridPosition checkGridPosition = LevelGrid.Instance.GetGridPosition(checkDestination);
-            List<GridPosition> validGridPositions = GetValidActionGridPostionList();
             return validGridPositions.Contains(checkGridPosition);
         }
 

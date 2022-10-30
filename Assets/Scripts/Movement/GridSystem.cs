@@ -71,6 +71,16 @@ namespace RPG.Movement
             }
         }
 
+        public int GetWidth()
+        {
+            return width;
+        }
+
+        public int GetLength()
+        {
+            return length;
+        }
+
     }
 
 }

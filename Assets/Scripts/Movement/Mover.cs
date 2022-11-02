@@ -6,6 +6,7 @@ using UnityEngine.AI;
 using RPG.Core;
 using RPG.Saving;
 using RPG.Attributes;
+using RPG.Control;
 
 namespace RPG.Movement
 {
@@ -20,14 +21,18 @@ namespace RPG.Movement
         Health health;
         private GridPosition gridPosition;
         private List<GridPosition> validGridPositions;
+        private PlayerSelector playerSelector;
+        private int numberOfGridSquaresLeftToMove;
 
         // Start is called before the first frame update
         void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             health = GetComponent<Health>();
+            playerSelector = GetComponent<PlayerSelector>();
             gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
             LevelGrid.Instance.AddUnitAtGridPosition(LevelGrid.Instance.GetGridPosition(transform.position), this);
+            numberOfGridSquaresLeftToMove = maxCombatMovmentSquares;
             CreateListOfValidGridDestinations();
         }
 
@@ -39,13 +44,13 @@ namespace RPG.Movement
             {
                 LevelGrid.Instance.UnitMovedGridPoistion(this, gridPosition, newGridPosition);
                 gridPosition = newGridPosition;
+                numberOfGridSquaresLeftToMove--;
             }
 
             navMeshAgent.enabled = !health.IsDead;
             UpdateAnimator();
-            //TODO Check for selected player
 
-            if(navMeshAgent.remainingDistance < 0.25f  )
+            if(navMeshAgent.remainingDistance < 0.25f && playerSelector != null && playerSelector.IsSelected )
             {
                 CreateListOfValidGridDestinations();
             }
@@ -174,9 +179,9 @@ namespace RPG.Movement
         {
             List <GridPosition> validGridPositionList = new List<GridPosition>();
 
-            for (int x = -maxCombatMovmentSquares; x <= maxCombatMovmentSquares; x++)
+            for (int x = -numberOfGridSquaresLeftToMove; x <= numberOfGridSquaresLeftToMove; x++)
             {
-                for (int z = -maxCombatMovmentSquares; z <= maxCombatMovmentSquares; z++)
+                for (int z = -numberOfGridSquaresLeftToMove; z <= numberOfGridSquaresLeftToMove; z++)
                 {
                     GridPosition offsetGridPosition = new GridPosition(x, z);
                     GridPosition testGridPosition = gridPosition + offsetGridPosition;

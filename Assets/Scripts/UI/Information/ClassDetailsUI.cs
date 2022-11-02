@@ -26,7 +26,7 @@ namespace RPG.UI.Information
         // Start is called before the first frame update
         void Start()
         {
-            player = PlayerController.GetFirstSelectedPlayer(); 
+            player = PlayerSelector.GetFirstSelectedPlayer(); 
             baseStats = player.GetComponent<BaseStats>();
             experience = player.GetComponent<Experience>();
             characterAbilities = player.GetComponent<CharacterAbilities>();

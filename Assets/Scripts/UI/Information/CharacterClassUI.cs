@@ -21,7 +21,7 @@ namespace RPG.UI.Information
 
         void Start()
         {
-            player = PlayerController.GetFirstSelectedPlayer(); 
+            player = PlayerSelector.GetFirstSelectedPlayer(); 
             baseStats = player.GetComponent<BaseStats>();
             experience = player.GetComponent<Experience>();
 

@@ -13,7 +13,7 @@ public class ExperienceDisplay : MonoBehaviour
 
         void Awake()
         {
-            experience = PlayerController.GetFirstSelectedPlayer().GetComponent<Experience>();
+            experience = PlayerSelector.GetFirstSelectedPlayer().GetComponent<Experience>();
         }
 
         private void Update()

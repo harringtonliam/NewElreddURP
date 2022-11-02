@@ -57,7 +57,7 @@ namespace RPG.UI.InventoryControl
                 containerName.text = defaultContainerName;
                 containerImage.sprite = defaultContainerImage;
             }
-            CharacterSheet characterSheet = PlayerController.GetFirstSelectedPlayer().GetComponent<CharacterSheet>();
+            CharacterSheet characterSheet = PlayerSelector.GetFirstSelectedPlayer().GetComponent<CharacterSheet>();
             playerName.text = characterSheet.CharacterName;
             playerImage.sprite = characterSheet.Portrait;
 

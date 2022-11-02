@@ -61,7 +61,7 @@ namespace RPG.SceneManagement
 
         private void UpdatePlayer(Portal otherPortal)
         {
-            GameObject player = PlayerController.GetFirstSelectedPlayer(); ;
+            GameObject player = PlayerSelector.GetFirstSelectedPlayer(); ;
             player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
             player.transform.rotation = otherPortal.spawnPoint.rotation;
         }
@@ -82,7 +82,7 @@ namespace RPG.SceneManagement
 
         private void DisablePlayerControl()
         {
-            GameObject player = PlayerController.GetFirstSelectedPlayer(); 
+            GameObject player = PlayerSelector.GetFirstSelectedPlayer(); 
             player.GetComponent<ActionScheduler>().CancelCurrentAction();
             player.GetComponent<PlayerController>().enabled = false;
         }
@@ -91,7 +91,7 @@ namespace RPG.SceneManagement
         {
             try
             {
-                GameObject player = PlayerController.GetFirstSelectedPlayer(); 
+                GameObject player = PlayerSelector.GetFirstSelectedPlayer(); 
                 player.GetComponent<PlayerController>().enabled = true;
             }
             catch(Exception ex)

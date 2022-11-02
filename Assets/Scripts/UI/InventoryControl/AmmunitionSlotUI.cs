@@ -33,7 +33,7 @@ namespace RPG.UI.InventoryControl
 
         void OnEnable()
         {
-            var player = PlayerController.GetFirstSelectedPlayer();
+            var player = PlayerSelector.GetFirstSelectedPlayer();
             store = player.GetComponent<AmmunitionStore>();
             store.storeUpdated += UpdateIcon;
             UpdateIcon();

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using RPG.Control;
 
-
 namespace RPG.Stats
 {
 
@@ -15,7 +14,7 @@ namespace RPG.Stats
 
         void Awake()
         {
-            baseStats = PlayerController.GetFirstSelectedPlayer().GetComponent<BaseStats>();
+            baseStats = PlayerSelector.GetFirstSelectedPlayer().GetComponent<BaseStats>();
         }
 
         private void Update()

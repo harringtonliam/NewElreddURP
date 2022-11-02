@@ -21,7 +21,7 @@ namespace RPG.UI.InGame
 
         private void Awake()
         {
-            player = PlayerController.GetFirstSelectedPlayer(); 
+            player = PlayerSelector.GetFirstSelectedPlayer(); 
             weaponStore = player.GetComponent<WeaponStore>();
             weaponStore.storeUpdated += UpdateIcon;
         }

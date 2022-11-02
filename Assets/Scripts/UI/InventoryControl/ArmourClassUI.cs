@@ -18,7 +18,7 @@ namespace RPG.UI.InventoryControl
 
         private void Awake()
         {
-            var player = PlayerController.GetFirstSelectedPlayer(); ;
+            var player = PlayerSelector.GetFirstSelectedPlayer(); ;
             playerAmourClass = player.GetComponent<ArmourClass>();
             playerEquipment = player.GetComponent<Equipment>();
             playerEquipment.equipmentUpdated += RedrawUI;

@@ -32,7 +32,7 @@ namespace RPG.UI.UseableProps
             activateButton.onClick.AddListener(ActivateButtonClick);
             deactivateButton.onClick.AddListener(DectivateButtonClick);
 
-            player = PlayerController.GetFirstSelectedPlayer(); 
+            player = PlayerSelector.GetFirstSelectedPlayer(); 
             
         }
 

@@ -29,7 +29,7 @@ namespace RPG.Combat
             Destroy(gameObject);
         }
 
-        public RaycastableReturnValue HandleRaycast(PlayerController playerController)
+        public RaycastableReturnValue HandleRaycast(PlayerSelector playerSelector)
         {
             //if (Input.GetMouseButtonDown(0))
             //{
@@ -42,9 +42,9 @@ namespace RPG.Combat
             return RaycastableReturnValue.FirstPlayerCharacter;
         }
 
-        public void HandleActivation(PlayerController playerController)
+        public void HandleActivation(PlayerSelector playerSelector)
         {
-            PickupRetriever pickupRetriever = playerController.transform.GetComponent<PickupRetriever>();
+            PickupRetriever pickupRetriever = playerSelector.transform.GetComponent<PickupRetriever>();
             if (pickupRetriever != null)
             {
                 pickupRetriever.StartPickupRetrieval(gameObject);

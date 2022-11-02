@@ -13,7 +13,7 @@ namespace RPG.Combat
 
         void Awake()
         {
-            GameObject player = PlayerController.GetFirstSelectedPlayer(); ;
+            GameObject player = PlayerSelector.GetFirstSelectedPlayer(); ;
             fighter = player.GetComponent<Fighting>();
         }
 

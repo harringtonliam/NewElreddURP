@@ -22,12 +22,12 @@ namespace RPG.Control
         [SerializeField] float raycastRadius = 0.25f;
 
 
-        private PlayerController selectedPlayer;
+        private PlayerSelector selectedPlayer;
 
         // Start is called before the first frame update
         void Start()
         {
-            selectedPlayer = PlayerController.GetFirstSelectedPlayer().GetComponent<PlayerController>();
+            selectedPlayer = PlayerSelector.GetFirstSelectedPlayer().GetComponent<PlayerSelector>();
         }
 
         // Update is called once per frame
@@ -153,13 +153,13 @@ namespace RPG.Control
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue))
             {
-                if (raycastHit.transform.TryGetComponent<PlayerController>(out PlayerController playerController))
+                if (raycastHit.transform.TryGetComponent<PlayerSelector>(out PlayerSelector playerSelector))
                 {
                     if (!controlKeyPressed)
                     {
                         DeSelectOtherPlayerControllers();
                     }
-                    selectedPlayer = playerController;
+                    selectedPlayer = playerSelector;
                     //TODO: Fix cinemachine reference
                     //FindObjectOfType<Cinemachine.CinemachineVirtualCamera>().Follow = selectedPlayer.transform;
                     selectedPlayer.SetSelected(true);
@@ -172,7 +172,7 @@ namespace RPG.Control
             GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("Player");
             foreach (var player in allPlayers)
             {
-                player.GetComponent<PlayerController>().SetSelected(false);
+                player.GetComponent<PlayerSelector>().SetSelected(false);
             }
         }
 

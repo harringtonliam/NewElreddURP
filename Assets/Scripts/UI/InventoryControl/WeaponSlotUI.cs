@@ -33,7 +33,7 @@ namespace RPG.UI.InventoryControl
 
         void OnEnable()
         {
-            weaponStore = PlayerController.GetFirstSelectedPlayer().GetComponent<WeaponStore>();
+            weaponStore = PlayerSelector.GetFirstSelectedPlayer().GetComponent<WeaponStore>();
             weaponStore.storeUpdated += UpdateIcon;
             UpdateIcon();
         }

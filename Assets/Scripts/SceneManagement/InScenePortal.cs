@@ -72,7 +72,7 @@ namespace RPG.SceneManagement
 
         private void DisablePlayerControl()
         {
-            GameObject player = PlayerController.GetFirstSelectedPlayer();
+            GameObject player = PlayerSelector.GetFirstSelectedPlayer();
             player.GetComponent<ActionScheduler>().CancelCurrentAction();
             player.GetComponent<PlayerController>().enabled = false;
         }
@@ -81,7 +81,7 @@ namespace RPG.SceneManagement
         {
             try
             {
-                GameObject player = PlayerController.GetFirstSelectedPlayer(); 
+                GameObject player = PlayerSelector.GetFirstSelectedPlayer(); 
                 player.GetComponent<PlayerController>().enabled = true;
             }
             catch (Exception ex)
@@ -95,7 +95,7 @@ namespace RPG.SceneManagement
                 return CursorType.Pickup;
         }
 
-        public RaycastableReturnValue HandleRaycast(PlayerController playerController)
+        public RaycastableReturnValue HandleRaycast(PlayerSelector playerSelector)
         {
             if (!playerUsablePortal) return RaycastableReturnValue.NoAction;
             //if (Input.GetMouseButtonDown(0))
@@ -109,9 +109,9 @@ namespace RPG.SceneManagement
             return RaycastableReturnValue.AllPlayerCharacters;
         }
 
-        public void HandleActivation(PlayerController playerController)
+        public void HandleActivation(PlayerSelector playerSelector)
         {
-            PortalActivator portalActivator = playerController.transform.GetComponent<PortalActivator>();
+            PortalActivator portalActivator = playerSelector.transform.GetComponent<PortalActivator>();
             if (portalActivator != null)
             {
                 portalActivator.StartPortalActivation(gameObject);

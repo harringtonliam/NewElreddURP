@@ -20,7 +20,7 @@ namespace RPG.UI.InGame
 
         private void Awake()
         {
-            player = PlayerController.GetFirstSelectedPlayer(); 
+            player = PlayerSelector.GetFirstSelectedPlayer(); 
             quickItemStore = player.GetComponent<QuickItemStore>();
             quickItemStore.storeUpdated += UpdateIcon;
         }

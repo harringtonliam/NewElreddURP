@@ -26,7 +26,7 @@ namespace RPG.InventoryControl
             return CursorType.Pickup;
         }
 
-        public RaycastableReturnValue HandleRaycast(PlayerController playerController)
+        public RaycastableReturnValue HandleRaycast(PlayerSelector playerController)
         {
             if (!IsDead()  && !alwaysAvailableToRaycast)
             {
@@ -44,7 +44,7 @@ namespace RPG.InventoryControl
             return RaycastableReturnValue.FirstPlayerCharacter;
         }
 
-        public void HandleActivation(PlayerController playerController)
+        public void HandleActivation(PlayerSelector playerController)
         {
             ContainerOpener containerOpener = playerController.transform.GetComponent<ContainerOpener>();
             if (containerOpener != null)

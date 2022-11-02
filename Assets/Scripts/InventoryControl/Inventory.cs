@@ -42,7 +42,7 @@ namespace RPG.InventoryControl
 
         public static Inventory GetPlayerInventory()
         {
-            var player = PlayerController.GetFirstSelectedPlayer(); 
+            var player = PlayerSelector.GetFirstSelectedPlayer(); 
             return player.GetComponent<Inventory>();
         }
 

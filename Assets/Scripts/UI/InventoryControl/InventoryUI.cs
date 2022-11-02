@@ -71,7 +71,7 @@ namespace RPG.UI.InventoryControl
 
         private void SelectedPlayerInventory()
         {
-            objectInventory = PlayerController.GetFirstSelectedPlayer().GetComponent<Inventory>();
+            objectInventory = PlayerSelector.GetFirstSelectedPlayer().GetComponent<Inventory>();
         }
 
 

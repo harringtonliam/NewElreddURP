@@ -15,7 +15,7 @@ namespace RPG.UI
 
         private void OnEnable()
         {
-            playerCharacterGameObject = PlayerController.GetFirstSelectedPlayer();
+            playerCharacterGameObject = PlayerSelector.GetFirstSelectedPlayer();
             RedrawUI();
         }
 

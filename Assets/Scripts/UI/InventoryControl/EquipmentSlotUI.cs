@@ -36,7 +36,7 @@ namespace RPG.UI.InventoryControl
 
         void OnEnable()
         {
-            var player = PlayerController.GetFirstSelectedPlayer();
+            var player = PlayerSelector.GetFirstSelectedPlayer();
             playerEquipment = player.GetComponent<Equipment>();
             playerEquipment.equipmentUpdated += RedrawUI;
             RedrawUI();

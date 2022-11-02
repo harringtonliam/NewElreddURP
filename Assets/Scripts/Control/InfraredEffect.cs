@@ -17,7 +17,7 @@ namespace RPG.Control
 
         private void Awake()
         {
-            var player = PlayerController.GetFirstSelectedPlayer(); ;
+            var player = PlayerSelector.GetFirstSelectedPlayer(); ;
             playerEquipment = player.GetComponent<Equipment>();
             playerEquipment.equipmentUpdated += CheckForInfrared;
         }

@@ -10,7 +10,7 @@ using UnityEngine.AI;
 
 namespace RPG.Control
 {
-    public class PlayerController : MonoBehaviour, IRaycastable
+    public class PlayerController : MonoBehaviour
     {
 
 
@@ -24,30 +24,16 @@ namespace RPG.Control
 
         [SerializeField] CursorMapping[] cursorMappings = null;
         [SerializeField] float raycastRadius = 0.25f;
-        [SerializeField] bool isSelected = true;
-        [SerializeField] Transform selectedVisual;
-
-
-        public bool IsSelected { get { return isSelected; } }
 
         Mover mover;
+        PlayerSelector playerSelector;
 
-        public static GameObject GetFirstSelectedPlayer()
-        {
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach (var player in players)
-            {
-                if (player.GetComponent<PlayerController>().IsSelected)
-                {
-                    return player;
-                }
-            }
-            return players[0];
-        }
+
 
         private void Awake()
         {
-             mover = GetComponent<Mover>();
+            mover = GetComponent<Mover>();
+            playerSelector = GetComponent<PlayerSelector>();
         }
 
         // Update is called once per frame
@@ -55,7 +41,7 @@ namespace RPG.Control
         {
             if (InteractWithUI()) return;
 
-            if (!isSelected) return;
+            if (!playerSelector.IsSelected) return;
 
             if (GetComponent<Health>().IsDead)
             {
@@ -70,19 +56,7 @@ namespace RPG.Control
             //SetCursorType(CursorType.None);
         }
 
-        public void SetSelected(bool selected)
-        {
-            Debug.Log("Player controller selected");
-            isSelected = selected;
-            if (selectedVisual != null)
-            {
-                selectedVisual.GetComponent<MeshRenderer>().enabled = selected;
-            }
-            if(selected)
-            {
-                mover.CreateListOfValidGridDestinations();
-            }
-        }
+
 
        
 
@@ -201,25 +175,8 @@ namespace RPG.Control
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
 
-        public CursorType GetCursorType()
-        {
-            if (GetComponent<Health>().IsDead)
-            {
-                return CursorType.None;
-            }
 
-            return CursorType.SelectPlayer;
-        }
 
-        public RaycastableReturnValue HandleRaycast(PlayerController playerController)
-        {
 
-            return RaycastableReturnValue.FirstPlayerCharacter;
-        }
-
-        public void HandleActivation(PlayerController playerController)
-        {
-            //TODO.  Set follow cammera on this player
-        }
     }
 }

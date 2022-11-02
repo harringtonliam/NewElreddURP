@@ -28,7 +28,7 @@ namespace RPG.UI
         // Start is called before the first frame update
         void Start()
         {
-            playerConversant = PlayerController.GetFirstSelectedPlayer().GetComponent<PlayerConversant>();
+            playerConversant = PlayerSelector.GetFirstSelectedPlayer().GetComponent<PlayerConversant>();
             playerConversant.onConversationUpdated += UpdateUI;
             nextButton.onClick.AddListener(Next);
             quitButton.onClick.AddListener(() => playerConversant.Quit());

@@ -43,7 +43,9 @@ namespace RPG.Movement
 
             navMeshAgent.enabled = !health.IsDead;
             UpdateAnimator();
-            if(navMeshAgent.remainingDistance < 0.25f && )
+            //TODO Check for selected player
+
+            if(navMeshAgent.remainingDistance < 0.25f  )
             {
                 CreateListOfValidGridDestinations();
             }

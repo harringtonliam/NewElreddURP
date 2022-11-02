@@ -13,7 +13,7 @@ namespace RPG.Attributes
 
         void Awake()
         {
-            health = PlayerController.GetFirstSelectedPlayer().GetComponent<Health>();
+            health = PlayerSelector.GetFirstSelectedPlayer().GetComponent<Health>();
         }
 
         private void Update()

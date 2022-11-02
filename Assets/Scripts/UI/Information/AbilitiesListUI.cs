@@ -18,7 +18,7 @@ namespace RPG.UI.Information
         void Start()
         {
 
-            player = PlayerController.GetFirstSelectedPlayer(); 
+            player = PlayerSelector.GetFirstSelectedPlayer(); 
             characterAbilities = player.GetComponent<CharacterAbilities>(); 
 
             RedrawUI();

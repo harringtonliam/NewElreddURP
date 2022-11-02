@@ -66,7 +66,7 @@ namespace RPG.Quests
 
         private void AwardExperience()
         {
-            GameObject player = PlayerController.GetFirstSelectedPlayer(); 
+            GameObject player = PlayerSelector.GetFirstSelectedPlayer(); 
             Experience experience = player.GetComponent<Experience>();
             if (player.GetComponent<Experience>() != null)
             {

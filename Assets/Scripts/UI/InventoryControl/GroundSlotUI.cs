@@ -19,7 +19,7 @@ namespace RPG.UI.InventoryControl
         void Start()
         {
             scenePickups = FindObjectOfType<ScenePickups>();
-            player = PlayerController.GetFirstSelectedPlayer();
+            player = PlayerSelector.GetFirstSelectedPlayer();
         }
 
 

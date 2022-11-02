@@ -66,7 +66,7 @@ namespace RPG.UseablePropControl
             return CursorType.Use;
         }
 
-        public RaycastableReturnValue HandleRaycast(PlayerController playerController)
+        public RaycastableReturnValue HandleRaycast(PlayerSelector playerSelector)
         {
             //if (Input.GetMouseButtonDown(0))
             //{
@@ -79,9 +79,9 @@ namespace RPG.UseablePropControl
             return RaycastableReturnValue.FirstPlayerCharacter;
         }
 
-        public void HandleActivation(PlayerController playerController)
+        public void HandleActivation(PlayerSelector playerSelector)
         {
-            UseProp useProp = playerController.transform.GetComponent<UseProp>();
+            UseProp useProp = playerSelector.transform.GetComponent<UseProp>();
             if (useProp != null)
             {
                 useProp.StartUseProp(gameObject);

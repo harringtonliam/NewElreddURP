@@ -50,7 +50,7 @@ namespace RPG.DialogueControl
         }
 
      
-        public RaycastableReturnValue HandleRaycast(PlayerController callingController)
+        public RaycastableReturnValue HandleRaycast(PlayerSelector callingController)
         {
             if (dialogue == null)
             {
@@ -72,7 +72,7 @@ namespace RPG.DialogueControl
             return RaycastableReturnValue.FirstPlayerCharacter;
         }
 
-        public void HandleActivation(PlayerController callingController)
+        public void HandleActivation(PlayerSelector callingController)
         {
             PlayerConversant playerConversant = callingController.GetComponent<PlayerConversant>();
             playerConversant.StartDialogue(this, dialogue);

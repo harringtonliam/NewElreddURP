@@ -19,7 +19,7 @@ namespace RPG.UI.InventoryControl
         // LIFECYCLE METHODS
         private void Awake()
         {
-            store = PlayerController.GetFirstSelectedPlayer().GetComponent<QuickItemStore>();
+            store = PlayerSelector.GetFirstSelectedPlayer().GetComponent<QuickItemStore>();
             store.storeUpdated += UpdateIcon;
         }
 

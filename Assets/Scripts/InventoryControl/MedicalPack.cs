@@ -65,7 +65,7 @@ namespace RPG.InventoryControl
         {
             if (useFX == null) return;
 
-            GameObject player = PlayerController.GetFirstSelectedPlayer(); ;
+            GameObject player = PlayerSelector.GetFirstSelectedPlayer(); ;
             GameObject fx = GameObject.Instantiate(useFX, player.transform);
             Destroy(fx, 1f);
 

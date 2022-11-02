@@ -2,9 +2,9 @@ using UnityEngine;
 using RPG.Saving;
 using RPG.Stats;
 using RPG.Core;
+using RPG.Control;
 using UnityEngine.Events;
 using System;
-using RPG.Control;
 
 namespace RPG.Attributes
 {
@@ -128,7 +128,7 @@ namespace RPG.Attributes
 
         private void AwardExperience()
         {
-            GameObject player = PlayerController.GetFirstSelectedPlayer();
+            GameObject player = PlayerSelector.GetFirstSelectedPlayer();
             Experience experience = player.GetComponent<Experience>();
             if (experience != null && !isDead)
             {

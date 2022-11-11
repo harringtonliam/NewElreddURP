@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using RPG.Core;
 using System;
+using RPG.Control;
 
 namespace RPG.Combat
 {
@@ -56,7 +57,7 @@ namespace RPG.Combat
             DebugInitiativeScores();
         }
 
-        public Fighting GetItemsWhosTurnItIs()
+        public Fighting GetWhosTurnItIs()
         {
             return combatParticipantsInitiatveOrder[whosTurnIsItIndex].fighting;
         }
@@ -88,13 +89,18 @@ namespace RPG.Combat
 
         }
 
-        private void StartNextTurn()
+        public void EndTurn()
         {
+            Debug.Log("Ending turn");
             whosTurnIsItIndex++;
-            if (whosTurnIsItIndex > combatParticipantsInitiatveOrder.Count)
+            if (whosTurnIsItIndex >= combatParticipantsInitiatveOrder.Count)
             {
-                StartCombat();
+                StartCombatRound();
             }
+            Debug.Log("Current Turn " + GetWhosTurnItIs().gameObject.name);
+            //GetWhosTurnItIs().GetComponent<PlayerSelector>().SetSelected(true);
+
+
         }
 
         public void EndCombat()
